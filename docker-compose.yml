@@ -1,0 +1,22 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+      args:
+        - DEV=true
+    ports:
+      - 8000:8000
+    volumes:
+      - ./src:/src
+    command: >
+      sh -c "uvicorn 'main:app' --host 0.0.0.0"
+    environment:
+      - SECRET_KEY='topsecretkey'
+    networks:
+      - template-net
+
+networks:
+  template-net:
+    driver: bridge
+      
