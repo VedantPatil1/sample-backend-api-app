@@ -1,7 +1,7 @@
 FROM python:3.14.3-alpine
 LABEL maintainer="vedantpatil.w.1@gmail.com"
 
-ENV PUTHONUNBUFFERED 1
+ENV PUTHONUNBUFFERED=1
 
 COPY ./requirements.txt /tmp/requirements.txt
 COPY ./requirements.dev.txt /tmp/requirements.dev.txt
