@@ -10,4 +10,8 @@ def create_app():
     def hello():
         return {"hello":"world"}
 
+    @app.get('/health')
+    def health():
+        return {"status": "ok"}
+
     return app
